@@ -1,0 +1,28 @@
+Package: ttnotion
+Type: Package
+Title: Tong's Notion API
+Version: 0.0.0.9000
+Authors@R: 
+    person(
+    given = "Tong",
+    family = "Zhou",
+    role = c("aut", "cre"),
+    email = "tongzhou2017@gmail.com"
+  )
+Description:
+    This is a package for using Notion offical API to support social media content generation.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Imports:
+    ttdiv,
+    ttfriends,
+    dplyr,
+    stringr,
+    lubridate,
+    utils
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
+RoxygenNote: 7.1.0

@@ -1,0 +1,33 @@
+---
+title: "Devlog 0.0.0.9000 Basic Setup & Table to Text"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{devlog_0_0_0_9000_basic_setup_and_table_to_text}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(ttnotion)
+```
+
+## Table to Text
+
+Export Notion data into csv file and using `table_to_report` function to generate daily report content for social media
+
+```{r eval=FALSE, include=FALSE}
+table_to_report("~/Downloads/daily_report/今日讲座 d6e04cf5f53e484d9e54b9618a32e5be.csv")
+```
+
+Note:
+
+1. non-ASCII characters debug [done]
+
+2. ttdiv::file_get_dir debug
