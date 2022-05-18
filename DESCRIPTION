@@ -20,6 +20,8 @@ Imports:
     dplyr,
     stringr,
     lubridate,
+    httr,
+    rjson,
     utils
 Suggests: 
     knitr,

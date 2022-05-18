@@ -1,5 +1,5 @@
 #' Table to Daily Report
-#' Generate daily report content based on Notion csv format database
+#' @description Generate daily report content based on Notion csv format database
 #' 
 #' @import dplyr
 #' @importFrom lubridate today

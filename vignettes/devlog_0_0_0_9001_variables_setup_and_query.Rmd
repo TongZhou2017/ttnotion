@@ -1,0 +1,32 @@
+---
+title: "Devlog_0_0_0_9001_variables_setup_and_query"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{devlog_0_0_0_9001_variables_setup_and_query}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(ttnotion)
+```
+
+## Setup token and database id
+```{r}
+token_setup_global()
+id_setup_global("d6e04cf5f53e484d9e54b9618a32e5be")
+```
+
+## Query database
+```{r}
+database_list <- database_query()
+str(database_list)
+```
+

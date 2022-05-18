@@ -2,8 +2,7 @@
 % Please edit documentation in R/table.R
 \name{table_to_report}
 \alias{table_to_report}
-\title{Table to Daily Report
-Generate daily report content based on Notion csv format database}
+\title{Table to Daily Report}
 \usage{
 table_to_report(file)
 }
@@ -11,6 +10,5 @@ table_to_report(file)
 \item{file}{input file in csv format}
 }
 \description{
-Table to Daily Report
 Generate daily report content based on Notion csv format database
 }
