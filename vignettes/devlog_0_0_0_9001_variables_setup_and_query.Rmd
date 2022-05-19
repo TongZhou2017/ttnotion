@@ -1,5 +1,5 @@
 ---
-title: "Devlog_0_0_0_9001_variables_setup_and_query"
+title: "Devlog 0.0.0.9001 Variables Setup & Query"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{devlog_0_0_0_9001_variables_setup_and_query}
