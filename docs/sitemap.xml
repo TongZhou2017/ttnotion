@@ -13,6 +13,9 @@
     <loc>/articles/devlog_0_0_0_9001_variables_setup_and_query.html</loc>
   </url>
   <url>
+    <loc>/articles/devlog_0_0_0_9002_full_database_and_create_object.html</loc>
+  </url>
+  <url>
     <loc>/articles/index.html</loc>
   </url>
   <url>
@@ -29,6 +32,54 @@
   </url>
   <url>
     <loc>/reference/index.html</loc>
+  </url>
+  <url>
+    <loc>/reference/is.notion_date.html</loc>
+  </url>
+  <url>
+    <loc>/reference/notion_data-class.html</loc>
+  </url>
+  <url>
+    <loc>/reference/notion_date-class.html</loc>
+  </url>
+  <url>
+    <loc>/reference/notion_filter-notion_date-method.html</loc>
+  </url>
+  <url>
+    <loc>/reference/notion_filter.html</loc>
+  </url>
+  <url>
+    <loc>/reference/notion_multi_select-class.html</loc>
+  </url>
+  <url>
+    <loc>/reference/notion_rich_text-class.html</loc>
+  </url>
+  <url>
+    <loc>/reference/notion_title-class.html</loc>
+  </url>
+  <url>
+    <loc>/reference/object_create_date.html</loc>
+  </url>
+  <url>
+    <loc>/reference/object_create_multi_select.html</loc>
+  </url>
+  <url>
+    <loc>/reference/object_create_rich_text.html</loc>
+  </url>
+  <url>
+    <loc>/reference/object_create_title.html</loc>
+  </url>
+  <url>
+    <loc>/reference/show-notion_date-method.html</loc>
+  </url>
+  <url>
+    <loc>/reference/show-notion_multi_select-method.html</loc>
+  </url>
+  <url>
+    <loc>/reference/show-notion_rich_text-method.html</loc>
+  </url>
+  <url>
+    <loc>/reference/show-notion_title-method.html</loc>
   </url>
   <url>
     <loc>/reference/table_to_report.html</loc>

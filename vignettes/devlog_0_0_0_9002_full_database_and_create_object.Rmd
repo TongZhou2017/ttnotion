@@ -1,0 +1,102 @@
+---
+title: "Devlog 0.0.0.9002 Full Database & Create Object"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{devlog_0_0_0_9002_full_database_and_create_object}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(ttnotion)
+```
+
+## Setup token and database id
+```{r eval=FALSE, include=FALSE}
+token_setup_global()
+id_setup_global("d6e04cf5f53e484d9e54b9618a32e5be")
+```
+
+## Query database
+```{r eval=FALSE, include=FALSE}
+database_list <- ttnotion::database_query()
+```
+
+Bug: cursor not work while more than 200 records[done]
+
+Note: wait without message[todo]
+
+## Plan
+
+1. query more than 100 [done]
+
+2. detect column type
+
+  Name "title"
+  大类 "multi_select"
+  类别 "multi_select"
+  时间 "date"
+  详情 "rich_text"
+  日期 "date"
+  地点 "rich_text"
+  
+  title[done]
+    Name
+  multi_select
+    大类
+    类别
+  date[done]
+    时间
+    日期
+  rich_text
+    详情
+    地点
+
+3. create object and method
+
+## Create Object
+
+### notion_title
+```{r eval=FALSE, include=FALSE}
+title_1 <- object_create_title(database_list$results[[1]]$properties$Name)
+```
+
+debug: NULL caused new object element length bug
+
+### notion_multi_select
+```{r eval=FALSE, include=FALSE}
+multi_select_1 <- object_create_multi_select(database_list$results[[17]]$properties$类别)
+multi_select_1
+```
+
+### notion_date
+```{r eval=FALSE, include=FALSE}
+date_1 <- object_create_date(database_list$results[[17]]$properties$时间)
+## show
+date_1
+## is
+is.notion_date(date_1)
+## filter
+notion_filter(date_1,min="2022-05-22",max="2022-05-28")
+notion_filter(date_1,min="2022-05-20",max="2022-05-22")
+```
+
+### notion_rich_text
+
+same with title
+
+```{r eval=FALSE, include=FALSE}
+input <- database_list$results[[1]]$properties$详情
+input_null <- database_list$results[[1]]$properties$地点
+
+rich_text_1 <- object_create_rich_text(input)
+rich_text_2 <- object_create_rich_text(input_null)
+```
+

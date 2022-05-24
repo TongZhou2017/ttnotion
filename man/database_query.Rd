@@ -4,10 +4,12 @@
 \alias{database_query}
 \title{Query Notion database}
 \usage{
-database_query(id = getOption("id"))
+database_query(id = getOption("id"), full = TRUE)
 }
 \arguments{
 \item{id}{Notion database id}
+
+\item{full}{full database or head 100 content}
 }
 \description{
 Query Notion database

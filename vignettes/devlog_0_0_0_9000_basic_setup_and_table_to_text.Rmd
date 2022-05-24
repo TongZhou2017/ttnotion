@@ -26,7 +26,9 @@ Export Notion data into csv file and using `table_to_report` function to generat
 #5.18
 #table_to_report("~/Downloads/daily_report/今日讲座 d6e04cf5f53e484d9e54b9618a32e5be.csv")
 #5.19
-table_to_report("~/Downloads/daily_report/今日讲座 d6e04cf5f53e484d9e54b9618a32e5be-1.csv")
+#table_to_report("~/Downloads/daily_report/今日讲座 d6e04cf5f53e484d9e54b9618a32e5be-1.csv")
+#5.20
+table_to_report("~/Downloads/daily_report/今日讲座 d6e04cf5f53e484d9e54b9618a32e5be 2.csv")
 ```
 
 Note:
