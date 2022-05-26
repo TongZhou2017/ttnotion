@@ -27,6 +27,65 @@ notion_data <- setClass(
   )
 )
 
+#' Create notion_object automatically
+#' @description create notion_object based on type
+#' 
+#' @param list input list
+#' 
+#' @export
+
+object_create_auto <- function(list){
+  if(list$type == "title"){
+    object <- object_create_title(list)
+  }
+  if(list$type == "multi_select"){
+    object <- object_create_multi_select(list)
+  }
+  if(list$type == "date"){
+    object <- object_create_date(list)
+  }
+  if(list$type == "rich_text"){
+    object <- object_create_rich_text(list)
+  }
+  return(object)
+}
+
+#' Simplify notion_data generic method
+#' @description for filtering records in date region
+#' 
+#' @param object notion_data object
+#' @rdname notion_database_table
+#' @export
+
+setGeneric("notion_database_table", function(object) {
+  standardGeneric("notion_database_table")
+})
+
+#' Simplify notion_data
+#' @description for simplifing database
+#' 
+#' @importFrom lubridate ymd_hms
+#' @importFrom lubridate ymd
+#' @importFrom stringr str_detect
+#' @param object notion_data object
+#' @export
+
+setMethod("notion_database_table",
+          "list",# todo notion_data
+          function(object){
+            # create a empty data frame
+            df <- data.frame(matrix(NA,nrow = length(object$results),ncol = length(object$results[[1]]$properties)),stringsAsFactors = F)
+            colnames(df) <- names(object$results[[1]]$properties)
+            for (index in 1:length(object$results)) { # todo auto type
+              # col 1
+              for (col_index in 1:length(colnames(df))) {
+                tmp_element <- object_create_auto(object$results[[index]]$properties[[colnames(df)[col_index]]])
+                df[index,colnames(df)[col_index]] <- paste0(notion_simplify(tmp_element), collapse = ", ")
+              }
+            }
+            return(df)
+          })
+
 #########################################################
 ##
 ##  notion_title Class & Methods
@@ -119,6 +178,44 @@ setMethod("show",
           }
 )
 
+#' simplify notion_* object generic method
+#' @description for simplifing different notion object to same type output
+#' 
+#' @param object notion_* object
+#' @rdname notion_simplify
+#' @export
+
+setGeneric("notion_simplify", function(object) {
+  standardGeneric("notion_simplify")
+})
+
+#' Simplify notion_title
+#' @description for simplifing notion_title object to simple type output
+#' 
+#' @param object notion_title object
+#' @export
+
+setMethod("notion_simplify",
+          "notion_title",
+          function(object){
+            return(object@plain_text)
+          })
+
+#' jadge object type is notion_title
+#' @description if type is notion_title, return TRUE
+#'
+#' @param object input data object
+#' 
+#' @export
+
+is.notion_title <- function(object){
+  if(object@type == "title"){
+    return(TRUE)
+  }else{
+    return(FALSE)
+  }
+}
+
 #########################################################
 ##
 ##  notion_multi_select Class & Methods
@@ -185,6 +282,32 @@ setMethod("show",
           }
 )
 
+#' Simplify notion_multi_select
+#' @description for simplifing notion_multi_select object to simple type output
+#' 
+#' @param object notion_multi_select object
+#' @export
+
+setMethod("notion_simplify",
+          "notion_multi_select",
+          function(object){
+            return(object@data$name)
+          })
+
+#' jadge object type is notion_multi_select
+#' @description if type is notion_multi_select, return TRUE
+#'
+#' @param object input data object
+#' 
+#' @export
+
+is.notion_multi_select <- function(object){
+  if(object@type == "multi_select"){
+    return(TRUE)
+  }else{
+    return(FALSE)
+  }
+}
 
 #########################################################
 ##
@@ -264,6 +387,18 @@ setMethod("show",
             cat(object@start)
           }
 )
+
+#' Simplify notion_date
+#' @description for simplifing notion_date object to simple type output
+#' 
+#' @param object notion_date object
+#' @export
+
+setMethod("notion_simplify",
+          "notion_date",
+          function(object){
+            return(object@start)
+          })
 
 #' jadge object type is notion_date
 #' @description if type is notion_date, return TRUE
@@ -426,3 +561,30 @@ setMethod("show",
             cat(object@plain_text)
           }
 )
+
+#' Simplify notion_rich_text
+#' @description for simplifing notion_rich_text object to simple type output
+#' 
+#' @param object notion_rich_text object
+#' @export
+
+setMethod("notion_simplify",
+          "notion_rich_text",
+          function(object){
+            return(object@plain_text)
+          })
+
+#' jadge object type is notion_rich_text
+#' @description if type is notion_rich_text, return TRUE
+#'
+#' @param object input data object
+#' 
+#' @export
+
+is.notion_rich_text <- function(object){
+  if(object@type == "rich_text"){
+    return(TRUE)
+  }else{
+    return(FALSE)
+  }
+}

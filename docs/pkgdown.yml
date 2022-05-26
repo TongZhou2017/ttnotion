@@ -5,5 +5,6 @@ articles:
   devlog_0_0_0_9000_basic_setup_and_table_to_text: devlog_0_0_0_9000_basic_setup_and_table_to_text.html
   devlog_0_0_0_9001_variables_setup_and_query: devlog_0_0_0_9001_variables_setup_and_query.html
   devlog_0_0_0_9002_full_database_and_create_object: devlog_0_0_0_9002_full_database_and_create_object.html
-last_built: 2022-05-24T22:26Z
+  devlog_0_0_0_9003_workflow_from_api_to_media: devlog_0_0_0_9003_workflow_from_api_to_media.html
+last_built: 2022-05-26T22:11Z
 

@@ -1,0 +1,46 @@
+---
+title: "Devlog 0.0.0.9003 Workflow from API to Media"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{devlog_0_0_0_9003_workflow_from_api_to_media}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(ttnotion)
+```
+
+## Setup token and database id
+```{r eval=FALSE, include=FALSE}
+token_setup_global()
+id_setup_global("d6e04cf5f53e484d9e54b9618a32e5be")
+```
+
+## Query database
+```{r eval=FALSE, include=FALSE}
+database_list <- ttnotion::database_query()
+```
+
+## Simplify database
+```{r eval=FALSE, include=FALSE}
+database_table <- notion_database_table(database_list)
+```
+
+## Generate report
+```{r eval=FALSE, include=FALSE}
+object_to_report(database_table,file = "~/Downloads/daily_report/5_27_report.txt")
+```
+
+## Graphic report
+```{r eval=FALSE, include=FALSE}
+ggplot(database_table,aes(x=日期,y=大类,label=Name)) + geom_text()
+```
+
