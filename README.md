@@ -1,9 +1,8 @@
 # ttnotion
-Tong's notion API
+
+<a href="https://tongzhou2017.github.io/ttnotion/"><img src="https://github.com/TongZhou2017/ttnotion/blob/main/docs/ttnotion_logo.png" height="200" align="right" /></a>
 
 The ttnotion is an R package for Notion API, developed and maintainded by Tong Zhou.
-
-![logo](https://github.com/TongZhou2017/ttnotion/blob/main/docs/ttnotion_logo.png)
 
 Instructions, documentation, and tutorials can be found at:
 
