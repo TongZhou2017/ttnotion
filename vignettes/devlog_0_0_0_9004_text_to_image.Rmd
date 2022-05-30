@@ -1,0 +1,85 @@
+---
+title: "Devlog 0.0.0.9004 Text to Image"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{devlog_0_0_0_9004_text_to_image}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(ttnotion)
+```
+
+
+## Setup token and database id
+```{r eval=FALSE, include=FALSE}
+token_setup_global()
+id_setup_global("d6e04cf5f53e484d9e54b9618a32e5be")
+```
+
+## Query database
+```{r eval=FALSE, include=FALSE}
+database_list <- ttnotion::database_query()
+```
+
+## Simplify database
+```{r eval=FALSE, include=FALSE}
+database_table <- notion_database_table(database_list)
+```
+
+## Generate report
+```{r eval=FALSE, include=FALSE}
+object_to_report(database_table,file = "~/Downloads/daily_report/5_30_report.txt")
+```
+
+## Graphic report
+```{r eval=FALSE, include=FALSE}
+showtext::showtext_auto()
+database_table_today <- database_table %>% filter(日期 == today())
+database_table_today <- table_mutate_time(database_table_today)
+```
+
+
+```{r eval=FALSE, include=FALSE}
+for (i in 1:nrow(database_table_today)) {
+  d <- table_build_graph(database_table_today,i)
+  graph_main_single(d,paste0("daily_report_",i,".png"))
+}
+
+
+```
+
+todo 
+1. text wrap[done]
+2. layout
+3. combine
+
+## cover 1
+```{r eval=FALSE, include=FALSE}
+graph_cover_update(database_table_today,output = "~/Downloads/daily_report/")
+```
+
+
+## main 2 3 4
+
+```{r eval=FALSE, include=FALSE}
+graph_main_topic(database_table_today,"~/Downloads/daily_report/",2)
+```
+
+
+## timeline 5
+```{r eval=FALSE, include=FALSE}
+graph_timeline(database_table_today,"~/Downloads/daily_report")
+```
+
+## next 6
+
+## end 7 8 9

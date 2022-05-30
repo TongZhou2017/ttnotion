@@ -19,6 +19,9 @@
     <loc>/articles/devlog_0_0_0_9003_workflow_from_api_to_media.html</loc>
   </url>
   <url>
+    <loc>/articles/devlog_0_0_0_9004_text_to_image.html</loc>
+  </url>
+  <url>
     <loc>/articles/index.html</loc>
   </url>
   <url>
@@ -29,6 +32,18 @@
   </url>
   <url>
     <loc>/reference/database_query.html</loc>
+  </url>
+  <url>
+    <loc>/reference/graph_cover_update.html</loc>
+  </url>
+  <url>
+    <loc>/reference/graph_main_single.html</loc>
+  </url>
+  <url>
+    <loc>/reference/graph_main_topic.html</loc>
+  </url>
+  <url>
+    <loc>/reference/graph_timeline.html</loc>
   </url>
   <url>
     <loc>/reference/id_setup_global.html</loc>
@@ -109,6 +124,9 @@
     <loc>/reference/object_to_report.html</loc>
   </url>
   <url>
+    <loc>/reference/replace.values.html</loc>
+  </url>
+  <url>
     <loc>/reference/show-notion_date-method.html</loc>
   </url>
   <url>
@@ -119,6 +137,12 @@
   </url>
   <url>
     <loc>/reference/show-notion_title-method.html</loc>
+  </url>
+  <url>
+    <loc>/reference/table_build_graph.html</loc>
+  </url>
+  <url>
+    <loc>/reference/table_mutate_time.html</loc>
   </url>
   <url>
     <loc>/reference/table_to_report.html</loc>

@@ -397,7 +397,11 @@ setMethod("show",
 setMethod("notion_simplify",
           "notion_date",
           function(object){
-            return(object@start)
+            if(object@end == "NULL"){
+              return(object@start)
+            }else{
+              return(paste0(object@start," -- ",object@end))
+            }
           })
 
 #' jadge object type is notion_date

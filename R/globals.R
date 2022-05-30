@@ -1,1 +1,1 @@
-utils::globalVariables(c("Date", "Subtopic", "Topic"))
+utils::globalVariables(c("Date", "Subtopic", "Topic", "x1", "x2", "y1", "y2", "r", "Freq", "start", "end", "大类", "时间"))

@@ -22,6 +22,12 @@ Imports:
     lubridate,
     httr,
     rjson,
+    ggplot2,
+    ggthemes,
+    RColorBrewer,
+    vistime,
+    patchwork,
+    meme,
     methods,
     utils
 Suggests: 
