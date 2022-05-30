@@ -1,7 +1,7 @@
 Package: ttnotion
 Type: Package
 Title: Tong's Notion API
-Version: 0.0.0.9000
+Version: 0.0.0.9004
 Authors@R: 
     person(
     given = "Tong",
