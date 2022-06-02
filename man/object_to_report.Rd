@@ -4,12 +4,12 @@
 \alias{object_to_report}
 \title{Notion database object to Daily Report}
 \usage{
-object_to_report(object, file)
+object_to_report(object, dir)
 }
 \arguments{
 \item{object}{input simplified notion database object}
 
-\item{file}{input file in csv format}
+\item{dir}{output dir}
 }
 \description{
 Generate daily report content based on Notion database object

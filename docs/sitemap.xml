@@ -34,6 +34,9 @@
     <loc>/reference/database_query.html</loc>
   </url>
   <url>
+    <loc>/reference/file_get_dir.html</loc>
+  </url>
+  <url>
     <loc>/reference/graph_cover_update.html</loc>
   </url>
   <url>
@@ -122,6 +125,9 @@
   </url>
   <url>
     <loc>/reference/object_to_report.html</loc>
+  </url>
+  <url>
+    <loc>/reference/pipeline_notion_xiaohongshu.html</loc>
   </url>
   <url>
     <loc>/reference/replace.values.html</loc>

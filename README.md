@@ -17,3 +17,11 @@ The ttnotion has been successfully installed on Mac OS, using the devtools packa
 Improvements and new features will be added on a regular basis, please post on the [github page](https://github.com/TongZhou2017/ttnotion) with any questions or if you would like to contribute
 
 For a version history/changelog, please see the [NEWS file]().
+
+## Installation
+
+```{r}
+#install.packages('remotes')
+remotes::install_github("TongZhou2017/ttfriends")
+remotes::install_github("TongZhou2017/ttnotion")
+```

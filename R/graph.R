@@ -51,6 +51,7 @@ graph_cover_update <- function(data,input="~/Downloads/daily_report/cover.png",o
 #' @description combine main content by topic
 #' 
 #' @importFrom patchwork wrap_plots
+#' @importFrom patchwork plot_annotation
 #' @importFrom stringr str_remove
 #' @importFrom grDevices png	
 #' @importFrom grDevices dev.off

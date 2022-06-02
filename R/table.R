@@ -10,7 +10,6 @@
 #' @importFrom stringr str_remove
 #' @importFrom stringr str_replace
 #' @importFrom ttfriends table_split_group
-#' @importFrom ttdiv file_get_dir
 #' @importFrom utils read.table
 #' @param file input file in csv format
 #' @export
@@ -58,13 +57,13 @@ table_to_report <- function(file){
 #' @importFrom stringr str_remove
 #' @importFrom stringr str_replace
 #' @importFrom ttfriends table_split_group
-#' @importFrom ttdiv file_get_dir
 #' @importFrom utils read.table
 #' @param object input simplified notion database object
-#' @param file input file in csv format
+#' @param dir output dir
 #' @export
 
-object_to_report <- function(object,file){
+object_to_report <- function(object,dir){
+  str_date <- paste0(month(today()),".",day(today()))
   tab <- object
   colnames(tab) <- c("Subtopic", "Time", "Details", "Topic", "Date","Location", "Name")
   
@@ -86,8 +85,7 @@ object_to_report <- function(object,file){
   
   # combine and wirte report information for social media
   lines <- paste0("[",month(today()),".",mday(today()),"]  ",nrow(tab_today)," Reports\n\nTopics\n\n",topic,"\n\nSubtopics\n\n",subtopic,"\n")
-  cat(lines,file=file)
-  
+  cat(lines,file=paste0(dir,"/",str_date,"_report.txt"))
 }
 
 #' Mutate new column of start and end time

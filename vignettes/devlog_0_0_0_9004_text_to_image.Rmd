@@ -37,7 +37,7 @@ database_table <- notion_database_table(database_list)
 
 ## Generate report
 ```{r eval=FALSE, include=FALSE}
-object_to_report(database_table,file = "~/Downloads/daily_report/5_30_report.txt")
+object_to_report(database_table,file = "~/Downloads/daily_report/5_31_report.txt")
 ```
 
 ## Graphic report
@@ -71,7 +71,7 @@ graph_cover_update(database_table_today,output = "~/Downloads/daily_report/")
 ## main 2 3 4
 
 ```{r eval=FALSE, include=FALSE}
-graph_main_topic(database_table_today,"~/Downloads/daily_report/",2)
+graph_main_topic(database_table_today,"~/Downloads/daily_report/",3)
 ```
 
 
@@ -83,3 +83,21 @@ graph_timeline(database_table_today,"~/Downloads/daily_report")
 ## next 6
 
 ## end 7 8 9
+
+## pipeline
+```{r eval=FALSE, include=FALSE}
+library(ttnotion)
+dir = "~/Downloads/daily_report/"
+pipeline_notion_xiaohongshu(dir)
+```
+
+## search
+
+```{r eval=FALSE, include=FALSE}
+for (i in 1:length(database_list$results)) {
+  if(database_list$results[[i]]$properties$Name$title[[1]]$plain_text == "气候变化对淡水储存和径流的影响"){
+    print(database_list$results[[i]]$properties$地点)
+  }
+}
+```
+
