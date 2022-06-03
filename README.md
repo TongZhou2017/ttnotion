@@ -22,6 +22,5 @@ For a version history/changelog, please see the [NEWS file]().
 
 ```{r}
 #install.packages('remotes')
-remotes::install_github("TongZhou2017/ttfriends")
 remotes::install_github("TongZhou2017/ttnotion")
 ```
