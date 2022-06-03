@@ -9,7 +9,6 @@
 #' @importFrom stringr str_replace_all
 #' @importFrom stringr str_remove
 #' @importFrom stringr str_replace
-#' @importFrom ttfriends table_split_group
 #' @importFrom utils read.table
 #' @param file input file in csv format
 #' @export
@@ -56,7 +55,6 @@ table_to_report <- function(file){
 #' @importFrom stringr str_replace_all
 #' @importFrom stringr str_remove
 #' @importFrom stringr str_replace
-#' @importFrom ttfriends table_split_group
 #' @importFrom utils read.table
 #' @param object input simplified notion database object
 #' @param dir output dir
@@ -129,4 +127,26 @@ table_build_graph <- function(tab,index){
                     paste0(tab[index,"详情"],collapse = ", "))
                 )
   return(d)
+}
+
+#' Split groups by column
+#' @description Split groups by column
+#' @param object a data frame with two or more columns
+#' @param col the coloumn for split
+#' @param header header string to ignore
+#' @param sep the split separator in string
+#' @import dplyr
+#' @importFrom tidyr separate_rows
+#' @importFrom stringr str_extract
+#' @importFrom stringr str_remove
+#' @export
+table_split_group <- function(object,col,header="",sep=""){
+  header = paste0("^",paste0(header,collapse ="|"))
+  object <- object %>%
+    mutate(y1 = stringr::str_extract(.data[[col]],header), y2 = stringr::str_remove(.data[[col]],header)) %>%
+    separate_rows(y2,sep=sep) %>%
+    filter(y2 != "") %>%
+    mutate(!!col := paste0(y1,y2)) %>%
+    select(-y1,-y2)
+  return(object)
 }
