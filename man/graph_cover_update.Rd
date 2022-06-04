@@ -4,7 +4,11 @@
 \alias{graph_cover_update}
 \title{Graph for xiaohongshu cover content}
 \usage{
-graph_cover_update(data, input = "~/Downloads/daily_report/cover.png", output)
+graph_cover_update(
+  data,
+  input = system.file("extdata", "cover.png", package = "ttnotion"),
+  output
+)
 }
 \arguments{
 \item{data}{input data frame}

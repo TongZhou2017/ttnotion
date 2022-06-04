@@ -5,10 +5,18 @@
 \title{Pipeline xiaohongshu
 automatic workflow to generate content for social media based on Notion database}
 \usage{
-pipeline_notion_xiaohongshu(dir)
+pipeline_notion_xiaohongshu(
+  dir,
+  id = "3b924c63c237440c854cdace3f254bd3",
+  token = system.file("extdata", "token.txt", package = "ttnotion")
+)
 }
 \arguments{
 \item{dir}{output dir}
+
+\item{id}{database id}
+
+\item{token}{token file}
 }
 \description{
 Pipeline xiaohongshu

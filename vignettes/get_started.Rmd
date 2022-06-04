@@ -1,0 +1,29 @@
+---
+title: "Getting Started with ttnotion"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{get_started}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+
+
+```{r setup}
+library(ttnotion)
+```
+
+You can change the value of dir as your local output dir.
+
+```{r eval=FALSE, include=TRUE}
+dir = getwd()
+pipeline_notion_xiaohongshu(dir)
+```
+

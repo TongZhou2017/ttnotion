@@ -19,13 +19,13 @@ library(ttnotion)
 ```
 
 ## Setup token and database id
-```{r}
+```{r eval=FALSE, include=FALSE}
 token_setup_global()
 id_setup_global("d6e04cf5f53e484d9e54b9618a32e5be")
 ```
 
 ## Query database
-```{r}
+```{r eval=FALSE, include=FALSE}
 database_list <- database_query()
 str(database_list)
 ```

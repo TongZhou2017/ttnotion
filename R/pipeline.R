@@ -3,12 +3,14 @@
 #' 
 #' @importFrom showtext showtext_auto
 #' @param dir output dir
+#' @param id database id
+#' @param token token file
 #' @export
 
-pipeline_notion_xiaohongshu <- function(dir){
+pipeline_notion_xiaohongshu <- function(dir,id="3b924c63c237440c854cdace3f254bd3",token=system.file("extdata","token.txt",package = "ttnotion")){
   showtext::showtext_auto()
-  token_setup_global()
-  id_setup_global("d6e04cf5f53e484d9e54b9618a32e5be")
+  token_setup_global(token)
+  id_setup_global(id)
   database_list <- ttnotion::database_query()
   database_table <- notion_database_table(database_list)
   object_to_report(database_table,dir = dir)

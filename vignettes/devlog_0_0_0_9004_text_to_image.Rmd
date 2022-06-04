@@ -22,7 +22,8 @@ library(ttnotion)
 ## Setup token and database id
 ```{r eval=FALSE, include=FALSE}
 token_setup_global()
-id_setup_global("d6e04cf5f53e484d9e54b9618a32e5be")
+#id_setup_global("d6e04cf5f53e484d9e54b9618a32e5be")
+id_setup_global("3b924c63c237440c854cdace3f254bd3")
 ```
 
 ## Query database
@@ -88,7 +89,7 @@ graph_timeline(database_table_today,"~/Downloads/daily_report")
 ```{r eval=FALSE, include=FALSE}
 library(ttnotion)
 dir = "~/Downloads/daily_report/"
-pipeline_notion_xiaohongshu(dir)
+pipeline_notion_xiaohongshu(dir,id = "d6e04cf5f53e484d9e54b9618a32e5be", token = system.file("extdata","token_ttfriends.txt",package = "ttnotion"))
 ```
 
 ## search

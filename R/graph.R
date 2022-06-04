@@ -39,7 +39,7 @@ graph_main_single <- function(data,file=NULL){
 #' @param output updated cover graph output dir
 #' @export
 
-graph_cover_update <- function(data,input="~/Downloads/daily_report/cover.png",output){
+graph_cover_update <- function(data,input=system.file("extdata","cover.png",package = "ttnotion"),output){
   str_date <- paste0(month(today()),".",day(today()))
   p <- meme(input,paste0(str_date,"共有",nrow(data),"个讲座"),vjust = 0.5,color = "orange",size = 1.5)
   png(paste0(output,"/cover_",str_date,".png"),res = 600,height = 2400,width = 1800)
