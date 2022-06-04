@@ -27,3 +27,6 @@ dir = getwd()
 pipeline_notion_xiaohongshu(dir)
 ```
 
+You can update information into database:
+
+https://ttfriends.notion.site/ttnotion-4e5b92874d6e4d02b3ebd8c111df8e91
